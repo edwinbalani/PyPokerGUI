@@ -1,4 +1,4 @@
 pypokerengine
 tornado
 click
-pyyaml
+ruamel.yaml
