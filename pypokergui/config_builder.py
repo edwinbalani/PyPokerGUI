@@ -1,4 +1,4 @@
-import ruamel.yaml import YAML
+from ruamel.yaml import YAML
 
 def build_config(max_round=None, initial_stack=None, small_blind=None, ante=None, blind_structure=None):
     yaml = YAML()
