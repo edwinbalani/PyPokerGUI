@@ -5,7 +5,7 @@ src_path = os.path.join(root, "pypokergui")
 sys.path.append(root)
 sys.path.append(src_path)
 
-import yaml
+from ruamel.yaml import YAML
 import uuid
 import tornado.ioloop
 import tornado.options
@@ -134,6 +134,7 @@ def setup_config(config):
 def start_server(config_path, port, speed):
     global MODE_SPEED
     with open(config_path, "rb") as f:
+        yaml = YAML()
         config = yaml.load(f)
     setup_config(config)
     MODE_SPEED = speed

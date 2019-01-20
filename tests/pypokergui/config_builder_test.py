@@ -7,7 +7,7 @@ try:
 except ImportError:
     from io import StringIO
 
-import yaml
+from ruamel.yaml import YAML
 
 from pypokergui.config_builder import build_config
 
@@ -22,6 +22,7 @@ class ConfigBuilderTest(BaseUnitTest):
         teardown_tmp_file()
 
     def test_build_config(self):
+        yaml = YAML()
         max_round = 10
         initial_stack = 100
         small_blind = 5

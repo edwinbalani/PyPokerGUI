@@ -1,6 +1,8 @@
-import yaml
+import ruamel.yaml import YAML
 
 def build_config(max_round=None, initial_stack=None, small_blind=None, ante=None, blind_structure=None):
+    yaml = YAML()
+    yaml.default_flow_style = False
     config = {
             "max_round": max_round,
             "initial_stack": initial_stack,
@@ -11,5 +13,5 @@ def build_config(max_round=None, initial_stack=None, small_blind=None, ante=None
                 { "name": "FIXME:your-ai-name", "path": "FIXME:your-setup-script-path" },
             ]
             }
-    print(yaml.dump(config, default_flow_style=False))
+    print(yaml.dump(config))
 
