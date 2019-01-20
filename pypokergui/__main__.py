@@ -10,7 +10,6 @@ sys.path.append(root)
 sys.path.append(src)
 
 import click
-import webbrowser
 
 from pypokergui.server.poker import start_server
 from pypokergui.config_builder import build_config
@@ -25,7 +24,6 @@ def cli():
 @click.option("--speed", default="moderate", type=click.Choice(["moderate", "fast"]), help="how fast game progress")
 def serve_command(config, port, speed):
     host = "localhost"
-    webbrowser.open("http://%s:%s" % (host, port))
     start_server(config, port, speed)
 
 @cli.command(name="build_config")
